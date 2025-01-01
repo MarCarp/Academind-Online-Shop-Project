@@ -1,10 +1,9 @@
 const express = require('express');
+const defaultRoutes = require('./routes/defaults');
 
 const app = express();
 
-app.get('/',function(req,res){
-    res.send('<h1>Hello Warudo</h1>');
-})
+app.use('/', defaultRoutes);
 
 app.listen(3000, ()=>{
     console.log("Listening on 3000");
