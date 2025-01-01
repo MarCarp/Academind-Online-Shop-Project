@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 
 const defaultRoutes = require('./routes/defaults');
+const db = require('./data/database');
 
 const app = express();
 
@@ -10,6 +11,9 @@ app.set('view engine', 'ejs');
 
 app.use('/', defaultRoutes);
 
-app.listen(3000, ()=>{
-    console.log("Listening on 3000");
-});
+db.connectToClient().then(
+    app.listen(3000, ()=>{
+        console.log("Listening on 3000");
+    })
+);
+

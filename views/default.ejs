@@ -7,6 +7,10 @@
 </head>
 <body>
     <h1>Hola Warudo</h1>
-    <p><%= test %></p>
+    <% if(test && test.length !== 0) {
+        for(testUnit of test) { %>
+            <p><%= testUnit.name %></p>
+        <% }
+    } %>
 </body>
 </html>
