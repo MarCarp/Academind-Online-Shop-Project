@@ -12,4 +12,13 @@ router.get('/login', async function(req,res){
     res.render('login');
 });
 
+router.get('/signup', async function(req,res){
+    res.render('signup');
+});
+
+router.post('/signup', async function(req,res){
+    console.log(req.body);
+    res.redirect('/');
+});
+
 module.exports = router;
